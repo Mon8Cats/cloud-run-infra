@@ -1,7 +1,4 @@
-# export TF_VAR_project_id="sky-root"
-# export TF_VAR_region="us-central1"
-
-
+# enable necessary apis and create a bucket
 module "enable_apis" {
   source                  = "../../modules/a01_enable_apis"
   project_id  = var.project_id
