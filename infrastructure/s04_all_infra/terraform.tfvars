@@ -1,16 +1,13 @@
-# common #############################################
-
 /* No space around =
-export TF_VAR_project_id="sky-root"
-export TF_VAR_project_number="262659146932"
+export TF_VAR_project_id="sky-cloud-run"
+export TF_VAR_project_number="499017637982"
 export TF_VAR_region="us-central1"
 echo $TF_VAR_project_id
+echo $TF_VAR_project_number
 echo $TF_VAR_region
+
 #bucket_name = "should be unique"
 */
-
-
-
 
 
 # (2) api list
@@ -50,7 +47,8 @@ secret_id_github = "github_token"
 secret_id_db_user = "db_user"
 secret_id_db_password = "db_password"
 
-# (6) github connection
+# (6) github connection #
+# my github account, settings/applications/configure -> check url
 installation_id_github_app = "55957239"
 connection_name_github = "github_connection"
 
@@ -112,10 +110,10 @@ wi_pool_id_infra = "wi-pool-infra"
 wi_pool_name_infra = "wi-pool-infra"
 wi_pool_provider_id_infra = "wi-pool-provider-infra"
 
-repository_infra_github      = "Mon8Cats/sky-dev-infra"
-repo_uri_infra_github = "https://github.com/Mon8Cats/sky-dev-infra.git"
-repo_name_infra_gcp = "sky-dev-infra"
-repo_name_infra_github = "sky-dev-infra"
+repository_infra_github      = "Mon8Cats/cloud-run-infra"
+repo_uri_infra_github = "https://github.com/Mon8Cats/cloud-run-infra.git"
+repo_name_infra_gcp = "cloud-run-infra"
+repo_name_infra_github = "cloud-run-infra"
 
 
 #############################################
@@ -143,8 +141,8 @@ wi_pool_id_app = "wi-pool-app"
 wi_pool_name_app = "wi-pool-app"
 wi_pool_provider_id_app = "wi-pool-provider-app"
 
-repository_app_github      = "Mon8Cats/sky-dev-app"
-repo_name_app_github = "sky-dev-app"
-repo_uri_app_github = "https://github.com/Mon8Cats/sky-dev-app.git"
-repo_name_app_gcp = "sky-dev-app"
+repository_app_github      = "Mon8Cats/cloud-run-app"
+repo_name_app_github = "cloud-run-app"
+repo_uri_app_github = "https://github.com/Mon8Cats/cloud-run-app.git"
+repo_name_app_gcp = "cloud-run-app"
 

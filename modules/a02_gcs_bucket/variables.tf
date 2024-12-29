@@ -1,5 +1,4 @@
 # Variables for bucket configuration
-
 variable "project_id" {
   description = "The GCP project ID where the bucket will be created"
   type        = string

@@ -1,5 +1,4 @@
 # Terraform Settings Block
-# Use backend bucket created in the previous step
 terraform {
   required_version = ">= 1.5.7"
   required_providers {
@@ -14,7 +13,7 @@ terraform {
   }
   # no backend
      backend "gcs" {
-    bucket  = "sky-tf-backend"  # The GCS bucket name, cannot use variable
+    bucket  = "skyroot-tf-backend"  # The GCS bucket name, cannot use variable
     prefix  = "terraform/state/secrets"  # Path to the state file within the bucket (use different paths for different environments)
     #project = var.project_id    # The GCP project ID
   }
