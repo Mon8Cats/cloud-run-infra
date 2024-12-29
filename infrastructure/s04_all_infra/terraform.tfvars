@@ -103,7 +103,7 @@ cicd_sa_role_list_infra = [
   #"roles/secretmanager.secretCreator"
 ]
 
-logs_bucket_name_infra = "skydev-infra-build-logs"
+logs_bucket_name_infra = "sky-run-infra-logs"
 
 # (4) Workload Identity
 wi_pool_id_infra = "wi-pool-infra"
@@ -135,7 +135,7 @@ cicd_sa_role_list_app = [
   "roles/run.admin",
 ]
 
-logs_bucket_name_app = "skydev-app-build-logs"
+logs_bucket_name_app = "sky-run-app-logs"
 
 wi_pool_id_app = "wi-pool-app"
 wi_pool_name_app = "wi-pool-app"
