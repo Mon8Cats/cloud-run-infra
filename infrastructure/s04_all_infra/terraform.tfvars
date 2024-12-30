@@ -1,3 +1,4 @@
+# (1) environment variables **********
 /* No space around =
 export TF_VAR_project_id="sky-cloud-run"
 export TF_VAR_project_number="499017637982"
@@ -10,7 +11,7 @@ echo $TF_VAR_region
 */
 
 
-# (2) api list
+# (2) api list **********
 api_list   = [
     "cloudresourcemanager.googleapis.com", # manually enabled
     "storage.googleapis.com",
@@ -21,47 +22,31 @@ api_list   = [
     "sqladmin.googleapis.com",
     "compute.googleapis.com",
     "run.googleapis.com",
-
-    #"iamcredentials.googleapis.com",
-    #"cloudbuild.googleapis.com",
-    #"artifactregistry.googleapis.com",
-    #"cloudresourcemanager.googleapis.com",
-    #"compute.googleapis.com",          # Compute Engine API
-    #"run.googleapis.com",              # Cloud Run API
-    #"cloudfunctions.googleapis.com",   # Cloud Functions API
-    #"container.googleapis.com",        # Kubernetes Engine API
-    #"appengine.googleapis.com",        # App Engine Admin API
-    #"cloudresourcemanager.googleapis.com", # Resource Manager API
-    # Add or remove APIs as needed
   ]
 
-cloud_run_sa_name = "cloud-run-sa"
-cloud_run_sa_role_list = [
-  "roles/secretmanager.secretAccessor",
-  "roles/cloudsql.client",
-]
 
-
-# (5) Secret
+# (3) secrets (GitHub and DB) **********
 secret_id_github = "github_token"
 secret_id_db_user = "db_user"
 secret_id_db_password = "db_password"
 
-# (6) github connection #
+# (4) github connection, github account, repos **********
 # my github account, settings/applications/configure -> check url
-installation_id_github_app = "55957239"
 connection_name_github = "github_connection"
-
+installation_id_github_app = "55957239"
 github_account = "Mon8Cats"
+github_repo_infra = "cloud-run-infra"
+github_repo_app = "cloud-run-app"
+gcp_repo_infra = "cloud-run-infra"
+gcp_repo_app = "cloud-run-app"
 
 
-# infra ##################################################
+# (5) service accounts and roles
+cicd_sa_infra = "sa-cicd-infra"
+cicd_sa_app = "sa-cicd-app"
+cloud_run_sa = "sa-cloud-run"
 
-
-#(3) infra cicd service account and roles
-cicd_sa_name_infra = "cicd-sa-infra"
-
-cicd_sa_role_list_infra = [
+cicd_sa_infra_role_list = [
   "roles/cloudbuild.builds.editor",
   "roles/storage.admin",
   "roles/secretmanager.secretAccessor",
@@ -76,50 +61,9 @@ cicd_sa_role_list_infra = [
   "roles/cloudsql.admin",
   "roles/compute.networkAdmin",
   "roles/compute.securityAdmin"
-
-  #"roles/cloudbuild.builds.builder",
-
-  #"roles/secretmanager.secretAccessor",
-  
-  #"roles/artifactregistry.reader",
-  #"roles/artifactregistry.writer",
-  #"roles/artifactregistry.admin",
-  #"roles/storage.admin",
-  #"roles/run.admin",
-  #"roles/iam.workloadIdentityPoolAdmin",
-  #"roles/iam.serviceAccountViewer",
-  #"roles/container.developer",
-  #"roles/iam.serviceAccountUser",
-  #"roles/compute.networkAdmin",
-  #"roles/compute.securityAdmin",
-  #"roles/iam.serviceAccountAdmin",
-  #"roles/serviceusage.serviceUsageAdmin",
-  #"roles/cloudsql.admin",
-  #"roles/viewer",
-  
-  #"roles/compute.subnetworkAdmin"
-  #"roles/secretmanager.admin",
-  #"roles/secretmanager.secretAccessor",
-  #"roles/secretmanager.secretCreator"
 ]
 
-logs_bucket_name_infra = "sky-run-infra-logs"
-
-# (4) Workload Identity
-wi_pool_id_infra = "wi-pool-infra"
-wi_pool_name_infra = "wi-pool-infra"
-wi_pool_provider_id_infra = "wi-pool-provider-infra"
-
-repository_infra_github      = "Mon8Cats/cloud-run-infra"
-repo_uri_infra_github = "https://github.com/Mon8Cats/cloud-run-infra.git"
-repo_name_infra_gcp = "cloud-run-infra"
-repo_name_infra_github = "cloud-run-infra"
-
-
-#############################################
-cicd_sa_name_app = "cicd-sa-app"
-
-cicd_sa_role_list_app = [
+cicd_sa_app_role_list = [
   "roles/cloudbuild.builds.editor",
   "roles/storage.admin",
   "roles/secretmanager.secretAccessor",
@@ -135,14 +79,32 @@ cicd_sa_role_list_app = [
   "roles/run.admin",
 ]
 
-logs_bucket_name_app = "sky-run-app-logs"
+cloud_run_sa_role_list = [
+  "roles/secretmanager.secretAccessor",
+  "roles/cloudsql.client",
+]
+
+# (6) Workload Identity
+/*
+wi_pool_id_infra = "wi-pool-infra"
+wi_pool_name_infra = "wi-pool-infra"
+wi_pool_provider_id_infra = "wi-pool-provider-infra"
 
 wi_pool_id_app = "wi-pool-app"
 wi_pool_name_app = "wi-pool-app"
 wi_pool_provider_id_app = "wi-pool-provider-app"
 
-repository_app_github      = "Mon8Cats/cloud-run-app"
-repo_name_app_github = "cloud-run-app"
-repo_uri_app_github = "https://github.com/Mon8Cats/cloud-run-app.git"
-repo_name_app_gcp = "cloud-run-app"
+*/
+
+# (7) log buckets for Cloud Build **********
+
+logs_bucket_infra = "sky-run-infra-logs"
+logs_bucket_app = "sky-run-app-logs"
+
+
+
+
+
+
+
 
