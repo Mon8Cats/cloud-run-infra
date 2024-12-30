@@ -13,7 +13,7 @@ terraform {
   }
   # no backend
      backend "gcs" {
-    bucket  = "skyroot-tf-backend"  # The GCS bucket name, cannot use variable
+    bucket  = "sky-tf-backend"  # The GCS bucket name, cannot use variable
     prefix  = "terraform/state/infra"  # Path to the state file within the bucket (use different paths for different environments)
     #project = var.project_id    # The GCP project ID
   }

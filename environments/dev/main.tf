@@ -66,7 +66,7 @@ data "google_secret_manager_secret_version" "db_password" {
 }
 
 
-
+/*
 module "cloud_sql_postgres" {
   source            =  "../../modules/f27_cloud_sql_postgres"
   project_id        = var.project_id
@@ -80,4 +80,18 @@ module "cloud_sql_postgres" {
   enable_private_ip = false
   availability_type = "ZONAL"
   vpc_name          = var.vpc_name
+}
+*/
+
+module "mysql_instance" {
+  source            =  "../../modules/f28_cloud_sql_mysql"
+  project_id         = var.project_id
+  region             = var.project_region
+  vpc_network        = "projects/${var.project_id}/global/networks/${var.vpc_name}"
+  mysql_instance_name = var.sql_instance_name
+  database_name      = var.sql_db_name
+  database_user      = data.google_secret_manager_secret_version.db_user.secret_data
+  database_password  = data.google_secret_manager_secret_version.db_password.secret_data
+  tier               = "db-f1-micro"
+  storage_size       = 20 # Specify storage size in GB
 }

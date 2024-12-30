@@ -18,7 +18,7 @@ locals {
 
   github_acct_repo_infra = "${var.github_account}/${var.github_repo_infra}"
   github_acct_repo_app = "${var.github_account}/${var.github_repo_app}"
-  github_uri_infra = "https://github.com${local.github_acct_repo_infra}.git"
+  github_uri_infra = "https://github.com/${local.github_acct_repo_infra}.git"
   github_uri_app =  "https://github.com/${local.github_acct_repo_app}.git"
   gcp_repo_infra = var.github_repo_infra
   gcp_repo_app = var.github_repo_app
