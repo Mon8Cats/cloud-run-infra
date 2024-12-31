@@ -82,8 +82,7 @@ steps:
 
 #options:
 #  logging: CLOUD_LOGGING_ONLY  # This option can be omitted as it's the default behavior for logsBucket
-#logsBucket: "gs://win-gke-cicd-log-${_BRANCH_NAME}"
-logsBucket: "gs://skydev-infra-build-logs"
+logsBucket: "gs://sky-run-infra-logs"
 
 substitutions:
   BRANCH_NAME: "dev"

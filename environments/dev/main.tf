@@ -83,6 +83,8 @@ module "cloud_sql_postgres" {
 }
 */
 
+
+/*
 module "mysql_instance" {
   source            =  "../../modules/f28_cloud_sql_mysql"
   project_id         = var.project_id
@@ -94,4 +96,18 @@ module "mysql_instance" {
   database_password  = data.google_secret_manager_secret_version.db_password.secret_data
   tier               = "db-f1-micro"
   storage_size       = 20 # Specify storage size in GB
+}
+*/
+
+module "mysql_instance2" {
+  source            =  "../../modules/f29_cloud_sql_mysql2"
+  project_id         = var.project_id
+  region             = var.project_region
+  sql_instance_name = var.sql_instance_name
+  db_name = var.sql_db_name
+  db_root_password = data.google_secret_manager_secret_version.db_password.secret_data
+  db_user =  data.google_secret_manager_secret_version.db_user.secret_data
+  db_user_password = data.google_secret_manager_secret_version.db_password.secret_data
+  subnet_self_link = module.subnet.subnet_self_link
+  #vpc_network = "vpc_network" 
 }
