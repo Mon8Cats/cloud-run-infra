@@ -3,7 +3,7 @@ variable "project_id" {
   type        = string
 }
 
-variable "project_region" {
+variable "region" {
   description = "Region in which GCP Resources to be created"
   type = string
   default = "us-central1"
@@ -16,16 +16,19 @@ variable "vpc_name" {
   type        = string
 }
 
+
 variable "subnet_name" {
   description = "Name of the subnet"
   type        = string
 }
 
 
+/*
 variable "subnet_region" {
   description = "Region for the subnet"
   type        = string
 }
+*/
 
 variable "subnet_ip_range" {
   description = "Subnet IP range"

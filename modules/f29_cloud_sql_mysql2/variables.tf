@@ -9,17 +9,23 @@ variable "region" {
   default     = "us-central1"  # Set a default region
 }
 
-/*
+
 variable "vpc_network" {
   description = "Name of the VPC Network for the Cloud SQL instance"
   type        = string
 }
-*/
 
+variable "vpc_subnet" {
+  description = "Name of the VPC Network for the Cloud SQL instance"
+  type        = string
+}
+
+/*
 variable "subnet_self_link" {
   description = "The self-link of the subnet"
   type = string
 }
+*/
 
 variable "sql_instance_name" {
   description = "Name of the Cloud SQL MySQL instance"

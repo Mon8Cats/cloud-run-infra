@@ -1,6 +1,3 @@
-# export TF_VAR_project_id="sky-root"
-# export TF_VAR_region="us-central1"
-
 
 module "enable_apis" {
   source                  = "../../modules/a01_enable_apis"

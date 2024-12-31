@@ -1,6 +1,6 @@
 # Terraform Settings Block
 terraform {
-  required_version = ">= 1.9"
+  required_version = ">= 1.5.7"
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -8,7 +8,7 @@ terraform {
     }
   }
   backend "gcs" {
-    bucket = "skyroot-tf-backend"
+    bucket = "sky-tf-backend"
     prefix = "env/dev"    
   }
 }
@@ -16,5 +16,5 @@ terraform {
 # Terraform Provider Block
 provider "google" {
   project = var.project_id
-  region = var.project_region
+  region = var.region
 }

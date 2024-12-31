@@ -7,7 +7,7 @@ locals {
   cloud_build_sa_email = "service-${var.project_number}@gcp-sa-cloudbuild.iam.gserviceaccount.com"
 
   # globally unique names # pool id (32), pool name (128), provider id (32), project num (12)
-  wi_pool = "wip"
+  wi_pool = "wipx"
   wi_pool_id_infra = "${local.wi_pool}-id-infra-${var.project_number}"
   wi_pool_name_infra = "${local.wi_pool}-name-infra-${var.project_number}"
   wi_pool_provider_id_infra = "${local.wi_pool}-prid-infra-${var.project_number}"

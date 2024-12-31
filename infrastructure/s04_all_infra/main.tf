@@ -1,12 +1,3 @@
-/* No space around =
-export TF_VAR_project_id="sky-root"
-export TF_VAR_project_number="262659146932"
-export TF_VAR_region="us-central1"
-echo $TF_VAR_project_id
-echo $TF_VAR_region
-#bucket_name = "should be unique"
-*/
-
 
 # (1) enable apis
 module "enable_apis" {
@@ -49,6 +40,7 @@ module "cicd_pipeline_infra" {
 
   depends_on   = [module.github_connection]
 }
+
 
 
 module "cicd_pipeline_app" {

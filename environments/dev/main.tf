@@ -9,7 +9,7 @@ module "subnet" {
   source           = "../../modules/f22_subnet"
   subnet_name      = var.subnet_name
   subnet_ip_range  = var.subnet_ip_range
-  subnet_region    = var.subnet_region
+  subnet_region    = var.region
   network_self_link = module.vpc.network_self_link
   project_id       = var.project_id
 }
@@ -45,7 +45,7 @@ module "allow_ssh" {
 module "artifact_registry_repository" {
   source         = "../../modules/f26_artifact_repository"
   project_id = var.project_id
-  region = var.project_region
+  region = var.region
   repository_id = var.artifact_repository_id # no underscore 4 to 63 characters
   description     = "Repository for storing Docker images"
   mode            = "STANDARD_REPOSITORY"
@@ -102,12 +102,14 @@ module "mysql_instance" {
 module "mysql_instance2" {
   source            =  "../../modules/f29_cloud_sql_mysql2"
   project_id         = var.project_id
-  region             = var.project_region
+  region             = var.region
   sql_instance_name = var.sql_instance_name
   db_name = var.sql_db_name
   db_root_password = data.google_secret_manager_secret_version.db_password.secret_data
   db_user =  data.google_secret_manager_secret_version.db_user.secret_data
   db_user_password = data.google_secret_manager_secret_version.db_password.secret_data
-  subnet_self_link = module.subnet.subnet_self_link
+  #subnet_self_link = module.subnet.subnet_self_link
+  vpc_network = var.vpc_name
+  vpc_subnet = var.subnet_name
   #vpc_network = "vpc_network" 
 }

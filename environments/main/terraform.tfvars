@@ -18,8 +18,8 @@ subnet_ip_range = "10.129.0.0/20"
 
 artifact_repository_id = "sky-art"
 
-secret_id_db_user = "db_user"
-secret_id_db_password = "db_password"
+secret_id_db_user = "db-user"
+secret_id_db_password = "db-password"
 
 
 # infra-service-account@win-gke-cicd.iam.gserviceaccount.com

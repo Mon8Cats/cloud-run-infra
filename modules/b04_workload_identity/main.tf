@@ -5,7 +5,7 @@ resource "google_iam_workload_identity_pool" "github_pool" {
   project                   = var.project_id 
   workload_identity_pool_id = var.wi_pool_id
   display_name              = var.wi_pool_name
-  description               = "Infra WI Pool"
+  description               = "WI Pool"
 
   
 }
@@ -16,7 +16,7 @@ resource "google_iam_workload_identity_pool_provider" "github_provider" {
   project  = var.project_id 
   workload_identity_pool_id         = google_iam_workload_identity_pool.github_pool.workload_identity_pool_id
   workload_identity_pool_provider_id = var.wi_pool_provider_id
-  display_name                      = "Infra WI Pool Provider"
+  display_name                      = "WI Pool Provider"
 
   attribute_mapping = {
     "google.subject"       = "assertion.sub"

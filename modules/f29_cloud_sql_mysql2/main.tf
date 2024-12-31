@@ -8,7 +8,7 @@ resource "google_sql_database_instance" "quickstart_instance" {
     tier = "db-f1-micro"  # Equivalent to 1 vCPU, 4GB RAM tier. Adjust as needed
     ip_configuration {
         ipv4_enabled = false
-        private_network = var.subnet_self_link 
+        private_network = local.subnet_self_link 
     }
   }
 
