@@ -43,7 +43,9 @@ steps:
       if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME
         echo "Using project ID: ${_PROJECT_ID}"
-        terraform plan -var="project_id=${_PROJECT_ID}"
+        terraform plan \
+          -var="project_id=${_PROJECT_ID}" \
+          -var="region=${_REGION}"
       else
         for dir in environments/*/
         do 
@@ -55,7 +57,9 @@ steps:
           echo "******* At environment: ${env} ********"
           echo "*************************************************"
           echo "Using project ID: ${_PROJECT_ID}"
-          terraform plan -var="project_id=${_PROJECT_ID}" || exit 1
+          terraform plan \ 
+            -var="project_id=${_PROJECT_ID}" \
+            -var="region=${_REGION}" || exit 1
           cd ../../
         done
       fi 
@@ -71,7 +75,9 @@ steps:
       if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME 
         echo "Using project ID: ${_PROJECT_ID}"     
-        terraform apply -var="project_id=${_PROJECT_ID}" -auto-approve
+        terraform apply \ 
+          -var="project_id=${_PROJECT_ID}" \
+          -var="region=${_REGION}" -auto-approve
       else
         echo "***************************** SKIPPING APPLYING *******************************"
         echo "Branch '$BRANCH_NAME' does not represent an official environment."
