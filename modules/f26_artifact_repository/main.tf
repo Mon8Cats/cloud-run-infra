@@ -8,8 +8,10 @@ resource "google_artifact_registry_repository" "docker_repository" {
   mode             = var.mode
   labels           = var.labels
 
+  /*
   lifecycle {
     prevent_destroy = true #var.prevent_destroy
   }
+  */
 }
 
