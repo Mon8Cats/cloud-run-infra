@@ -85,5 +85,5 @@ logsBucket: "gs://sky-run-infra-logs"
 
 substitutions:
   _BRANCH_NAME: "dev"
-  _PROJECT_ID: "my-project-id"
+  _PROJECT_ID: "sky-cloud-run"
   _REGION: "us-central1"
