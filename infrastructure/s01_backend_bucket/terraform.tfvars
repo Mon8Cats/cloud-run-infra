@@ -15,4 +15,4 @@ pre_api_list   = [
     "storage.googleapis.com",
 ]
 
-bucket_name = "skyroot-tf-backend" # globally unique name
+bucket_name = "sky-tf-backend" # globally unique name

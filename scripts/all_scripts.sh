@@ -1,3 +1,17 @@
+
+
+# active project
+gcloud config set project sky-cloud-run
+# check billing - billing Menu > Billing> Billing Account
+
+# update secrete value
+
+
+
+
+
+
+
 # check identity pool
 gcloud iam workload-identity-pools list --location="global"
 
