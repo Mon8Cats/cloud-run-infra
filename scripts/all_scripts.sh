@@ -1,5 +1,8 @@
 
 
+terraform state list
+
+
 # active project
 gcloud config set project sky-cloud-run
 # check billing - billing Menu > Billing> Billing Account

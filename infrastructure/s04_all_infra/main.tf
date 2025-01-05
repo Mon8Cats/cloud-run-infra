@@ -14,7 +14,7 @@ module "github_connection" {
   project_id               = var.project_id
   region                   = var.region
   github_app_installation_id = var.installation_id_github_app
-  connection_name = var.connection_name_github
+  connection_name = local.pf_connection_name_github
   secret_id = var.secret_id_github
 
 }
@@ -25,7 +25,7 @@ module "cicd_pipeline_infra" {
 
   project_id = var.project_id
   region = var.region
-  cicd_sa_name = var.cicd_sa_infra
+  cicd_sa_name = local.pf_cicd_sa_infra
   cicd_sa_role_list = var.cicd_sa_infra_role_list
   bucket_name = var.logs_bucket_infra
   wi_pool_id = local.wi_pool_id_infra
@@ -48,7 +48,7 @@ module "cicd_pipeline_app" {
 
   project_id = var.project_id
   region = var.region
-  cicd_sa_name = var.cicd_sa_app
+  cicd_sa_name = local.pf_cicd_sa_app
   cicd_sa_role_list = var.cicd_sa_app_role_list
   bucket_name = var.logs_bucket_app
   wi_pool_id = local.wi_pool_id_app
@@ -95,7 +95,7 @@ module "secret_access_db_password_app" {
 module "cloud_run_service_account" {
   source               = "../../modules/b03_service_account"
   project_id           = var.project_id
-  service_account_name = var.cloud_run_sa
+  service_account_name = local.pf_cloud_run_sa
   display_name         = "Cloud Run Service Account"
   description          = "This service account is used for cloud run service"
 

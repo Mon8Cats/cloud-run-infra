@@ -98,8 +98,8 @@ wi_pool_provider_id_app = "wi-pool-provider-app"
 
 # (7) log buckets for Cloud Build : put them in the cloudbuild.yaml **********
 
-logs_bucket_infra = "sky-run-infra-logs" 
-logs_bucket_app = "sky-run-app-logs"
+logs_bucket_infra = "xsky-run-infra-logs" 
+logs_bucket_app = "xsky-run-app-logs"
 
 
 # (8) Create the triggers manually!
