@@ -5,6 +5,9 @@ resource "google_storage_bucket" "my_bucket" {
   location      = var.location
   storage_class = var.storage_class
 
+   # Enable force destruction of the bucket and its contents
+  force_destroy = true
+
   # Enable versioning for state history tracking
   versioning {
     enabled = var.versioning_enabled

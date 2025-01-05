@@ -33,7 +33,7 @@ secret_id_db_password = "db_password"
 # (4) github connection, github account, repos **********
 # my github account, settings/applications/configure -> check url
 connection_name_github = "github_connection"
-installation_id_github_app = "55957239"
+installation_id_github_app = "55957239" # from GitHub
 github_account = "Mon8Cats"
 github_repo_infra = "cloud-run-infra"
 github_repo_app = "cloud-run-app"
@@ -96,13 +96,13 @@ wi_pool_provider_id_app = "wi-pool-provider-app"
 
 */
 
-# (7) log buckets for Cloud Build **********
+# (7) log buckets for Cloud Build : put them in the cloudbuild.yaml **********
 
-logs_bucket_infra = "sky-run-infra-logs"
-logs_bucket_app = "sky-run-app-logs"
+logs_bucket_infra = "xsky-run-infra-logs" 
+logs_bucket_app = "xsky-run-app-logs"
 
 
-
+# (8) Create the triggers manually!
 
 
 
